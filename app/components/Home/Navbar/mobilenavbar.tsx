@@ -19,12 +19,10 @@ const Mobilenavbar = ({ closeNav, showNav }: Props) => {
 
   return (
     <div>
-      {/* Overlay sliding from left */}
       <div
         className={`fixed inset-0 z-[1002] bg-black opacity-70 w-full h-screen transform transition-transform duration-300 ease-in-out lg:hidden ${overlayClasses}`}
       />
 
-      {/* Sidebar sliding in with slight delay */}
       <div
         className={`fixed flex flex-col justify-center h-full w-[80%] sm:w-[60%] bg-rose-900 text-white space-y-6 z-[1050] transform transition-transform duration-500 ease-in-out lg:hidden ${sidebarClasses}`}
       >
