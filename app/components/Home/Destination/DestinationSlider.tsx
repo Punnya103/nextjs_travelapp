@@ -8,8 +8,8 @@ import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    breakpoint: { max: 2000, min: 1024 },
+    items: 4,
     slidesToSlide: 3
   },
   tablet: {
@@ -33,20 +33,30 @@ const DestinationSlider = () => {
       autoPlaySpeed={4000}
       keyBoardControl
       containerClass="carousel-container"
-      itemClass="px-3"
+      itemClass="px-3 mb-5"
+  
+      
     >
       {destinationData.map((data) => (
-        <div key={data.id} className='relative h-[400px] rounded-xl overflow-hidden shadow-lg group'>
-          <Image
-            src={data.image}
-            alt={data.country}
-            width={500}
-            height={400}
-            className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
-          />
-          <div className='absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-opacity'></div>
-          <div className='absolute bottom-5 left-5 text-white z-10'>
-            <h3 className='text-2xl font-semibold'>{data.country}</h3>
+        <div
+          key={data.id}
+          className="h-[500px] rounded-xl overflow-hidden shadow-lg bg-white flex flex-col"
+        >
+
+          <div className="relative h-[400px] group">
+            <Image
+              src={data.image}
+              alt={data.country}
+              fill
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 w-full h-full transition-transform duration-500 group-hover:scale-105 transition-opacity"></div>
+          </div>
+
+    
+          <div className="flex-1 px-5 py-4 text-gray-800">
+            <h3 className="text-xl font-semibold">{data.country}</h3>
+            <p className="text-sm text-gray-600">{data.travelers} Travelers</p>
           </div>
         </div>
       ))}
