@@ -33,11 +33,11 @@ const HotelCard = ({ hotel }: Props) => {
         <h2 className="text-xl font-semibold text-gray-900">{hotel.name}</h2>
         <p className="text-gray-600 mt-1">{hotel.location}</p>
 
-        <div className="flex justify-between items-center mt-3">
+        <div className="flex gap-2 items-center mt-3">
           <span className="bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
             {hotel.rating}
           </span>
-          <span className="text-sm text-gray-800 font-semibold">Exceptional</span>
+          <span className="text-sm text-gray-600 font-semibold mt-1">Exceptional</span>
               <p className="text-sm text-gray-600 mt-1">{hotel.reviews} reviews</p>
         </div>
 
